@@ -1,0 +1,494 @@
+{
+	"info": {
+		"_postman_id": "5b7574d7-6eb7-495d-9dca-dce19251e3fe",
+		"name": "posts-render-week8",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33251865"
+	},
+	"item": [
+		{
+			"name": "會員功能",
+			"item": [
+				{
+					"name": "註冊",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"喵喵\",\r\n    \"email\":\"meow@gmail.com\",\r\n    \"confirmPassword\":\"12345678\",\r\n    \"password\":\"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://two024-week8-posts.onrender.com/users/sign_up",
+							"protocol": "http",
+							"host": [
+								"two024-week8-posts",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"users",
+								"sign_up"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "登入",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"meow@gmail.com\",\r\n    \"password\":\"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://two024-week8-posts.onrender.com/users/sign_in",
+							"protocol": "http",
+							"host": [
+								"two024-week8-posts",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"users",
+								"sign_in"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "用戶資料(需登入)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://two024-week8-posts.onrender.com/users/profile",
+							"protocol": "http",
+							"host": [
+								"two024-week8-posts",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"users",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "更新密碼(需登入",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"confirmPassword\": \"12345678\",\r\n    \"password\": \"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://two024-week8-posts.onrender.com/users/updatePassword",
+							"protocol": "http",
+							"host": [
+								"two024-week8-posts",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"users",
+								"updatePassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "更新用戶資料(需登入)",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"小咪\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://two024-week8-posts.onrender.com/users/profile",
+							"protocol": "http",
+							"host": [
+								"two024-week8-posts",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"users",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "會員按讚追蹤動態",
+			"item": [
+				{
+					"name": "追蹤一位朋友(需登入)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://two024-week8-posts.onrender.com/users/6640bec100edfa4d95f2a77a/follow",
+							"protocol": "http",
+							"host": [
+								"two024-week8-posts",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"users",
+								"6640bec100edfa4d95f2a77a",
+								"follow"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "取消追蹤一位朋友(需登入)",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://two024-week8-posts.onrender.com/users/6640bec100edfa4d95f2a77a/unfollow",
+							"protocol": "http",
+							"host": [
+								"two024-week8-posts",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"users",
+								"6640bec100edfa4d95f2a77a",
+								"unfollow"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "取得個人按讚列表(需登入)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://two024-week8-posts.onrender.com/users/getLikeList",
+							"protocol": "http",
+							"host": [
+								"two024-week8-posts",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"users",
+								"getLikeList"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "取得個人追蹤名單(需登入)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://two024-week8-posts.onrender.com/users/following",
+							"protocol": "http",
+							"host": [
+								"two024-week8-posts",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"users",
+								"following"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "動態貼文",
+			"item": [
+				{
+					"name": "取得一筆貼文(需登入)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://two024-week8-posts.onrender.com/posts/665c4c00383be18f5741909c",
+							"protocol": "http",
+							"host": [
+								"two024-week8-posts",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"posts",
+								"665c4c00383be18f5741909c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "新增一筆貼文(需登入)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"content\": \"今天要吃小魚乾3333\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://two024-week8-posts.onrender.com/posts",
+							"protocol": "http",
+							"host": [
+								"two024-week8-posts",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "新增一筆貼文的讚(需登入)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://two024-week8-posts.onrender.com/posts/665dbd152298ba11cf3ee0f3/likes",
+							"protocol": "http",
+							"host": [
+								"two024-week8-posts",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"posts",
+								"665dbd152298ba11cf3ee0f3",
+								"likes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "取消一筆貼文的讚(需登入)",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://two024-week8-posts.onrender.com/posts/665bed17cd80b99efd53c07f/likes",
+							"protocol": "http",
+							"host": [
+								"two024-week8-posts",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"posts",
+								"665bed17cd80b99efd53c07f",
+								"likes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "新增一筆貼文的留言(需登入)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"comment\": \"留言資訊4\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://two024-week8-posts.onrender.com/posts/665bed17cd80b99efd53c07f/comment",
+							"protocol": "http",
+							"host": [
+								"two024-week8-posts",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"posts",
+								"665bed17cd80b99efd53c07f",
+								"comment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "取得所有貼文(需登入)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://two024-week8-posts.onrender.com/posts",
+							"protocol": "http",
+							"host": [
+								"two024-week8-posts",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "其他",
+			"item": [
+				{
+					"name": "上傳圖片(需登入)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://two024-week8-posts.onrender.com/upload/file",
+							"protocol": "http",
+							"host": [
+								"two024-week8-posts",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"upload",
+								"file"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "刪除全部貼文(需登入",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://two024-week8-posts.onrender.com/posts",
+							"protocol": "http",
+							"host": [
+								"two024-week8-posts",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "刪除一筆貼文(需登入)",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://two024-week8-posts.onrender.com/posts/664880a90de261caa23d7054",
+							"protocol": "http",
+							"host": [
+								"two024-week8-posts",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"posts",
+								"664880a90de261caa23d7054"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "更新一筆貼文(需登入)",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"content\":\"今天要吃鮪魚罐頭\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://two024-week8-posts.onrender.com/posts/664881020de261caa23d705f",
+							"protocol": "http",
+							"host": [
+								"two024-week8-posts",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"posts",
+								"664881020de261caa23d705f"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
